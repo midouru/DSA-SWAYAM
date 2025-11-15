@@ -1,0 +1,15 @@
+int totalSum(vector<int>& arr, int i){
+        int n = arr.size();
+        
+        if(i==arr.size()){
+            return 0 ;
+        }
+        return arr[i] + totalSum(arr, i+1); ;
+        
+        
+    }
+    int arraySum(vector<int>& arr) {
+        // code here
+        int ans = totalSum(arr,0);
+        return ans;
+    }
