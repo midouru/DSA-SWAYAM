@@ -1,13 +1,11 @@
-int pivotIndex(vector<int>& nums) {
-        int sum = std::accumulate(nums.begin(),nums.end(),0);
+int removeDuplicates(vector<int>& nums) {
         int n = nums.size();
-        int lsum = 0;
-        for(int i=0;i<n;i++){
-            int rsum = sum - lsum - nums[i];
-            if(rsum == lsum){
-                return i;
+        int i = 0;
+        for(int j=1;j<n;j++){
+            if(nums[j]!=nums[i]){
+                i++;
+                nums[i]=nums[j];
             }
-            lsum = lsum + nums[i];
         }
-        return -1;
+        return i+1;
     }
